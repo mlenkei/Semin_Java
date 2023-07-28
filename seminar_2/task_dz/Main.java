@@ -40,14 +40,16 @@ public class Main {
             System.out.println(String.format("%s, высота прыжка: %s", String.valueOf(fly), fly.speedOfFly()));
         }
     
-        String value;
+        @FunctionalInterface
+        public interface MyFunctionalInterface {
+        void doSomething();
+        }
 
-        value = ("Cat") -> {
-            if (1 > 0) {
-                System.out.println("Все животные привиты");
+        public class MyClass {
+            public void doAction(MyFunctionalInterface myInterface) {
+                myInterface.doSomething();
             }
-            return "Cat";
-        };
+      }
         System.out.println(value.getValue("Cat"));
     }   
         
